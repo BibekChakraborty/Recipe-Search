@@ -1,5 +1,5 @@
 import "./key";
-import React, { component } from "react";
+import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import Recipetile from "./Recipetile";
@@ -20,8 +20,6 @@ function App() {
     var result = await axios.get(url);
     setRecipes(result.data.hits);
     result.data.more === false ? settext(text + 1) : settext(0);
-    console.log(text);
-    console.log(result);
   }
   const onSearch = (e) => {
     e.preventDefault();
@@ -57,7 +55,6 @@ function App() {
       </div>
       <Landingimg image={image} />
       <Text value={text} />
-      
     </div>
   );
 }
